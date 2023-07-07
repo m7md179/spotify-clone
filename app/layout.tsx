@@ -5,6 +5,7 @@ import SupabaseProvider from "@/providers/supabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
+import { twMerge } from "tailwind-merge";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`h-full ${font.className}`}>
+      <body className={twMerge("h-full", font.className)}>
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
