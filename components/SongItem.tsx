@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import useLoudImage from "@/hooks/useLoudImage";
+import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
 import PlayButton from "./PlayButton";
 
@@ -11,7 +11,7 @@ interface SongItemProps {
 }
 
 const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
-  const imagePath = useLoudImage(data);
+  const imagePath = useLoadImage(data);
   return (
     <>
       <div
